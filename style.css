@@ -7,3 +7,109 @@
   font-weight: <weight>;
   font-style: normal;
 } */
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Orbitron", sans-serif;
+  color: #453831;
+}
+
+button {
+  width: 10vw;
+  font-family: "Orbitron", sans-serif;
+  color: #453831;
+}
+
+.display {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #453831;
+  border-radius: 12px;
+  gap: 12px;
+  padding: 1vh 2vw;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 12px;
+  width: 29vw;
+  padding: 3vh 2vw;
+  background-color: #f3f3eb;
+  box-shadow: 12px 12px #453831;
+  border-radius: 12px;
+}
+
+.screen {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #cfd8d7;
+  height: 5vh;
+  box-shadow: inset 3px 3px #453831;
+  border-radius: 6px;
+  font-size: 1.3em;
+  padding-right: 4px;
+}
+
+.labels {
+  color: #c0091e;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  width: 25vw;
+  gap: 5px;
+}
+
+.button-row {
+  align-self: center;
+  display: flex;
+  justify-content: stretch;
+  height: 8vh;
+  width: 100%;
+  gap: 5px;
+}
+
+.button {
+  flex-grow: 1;
+  font-weight: 700;
+  box-shadow: 3px 3px #453831;
+  background-color: #cfd8d7;
+  border: none;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.button:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.button-operand,
+.button-negative-toggle,
+.button-clear,
+.button-equals {
+  background-color: #c0091e;
+  color: #f3f3eb;
+  font-size: 1.8em;
+}
+
+.button-clear {
+  background-color: #cfd8d7;
+  color: #c0091e;
+  /* font-size: 1.8em; */
+}
