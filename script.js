@@ -69,6 +69,11 @@ function operatorTransition(event) {
   if (lastNumber && currentNumber) {
     resetOperatorButtons();
     lastNumber = evalNumbers(lastNumber, Number(currentNumber), operator);
+    console.log(lastNumber);
+    if (lastNumber.toString().length > 9) {
+      lastNumber = lastNumber.toExponential(2);
+    }
+    console.log(lastNumber);
     setCurrentOperatorButton(currButton, inputValue);
     currentNumber = "";
     updateScreen(lastNumber.toString().slice(0, 10));
@@ -80,6 +85,9 @@ function equalsTransition(event) {
   if (lastNumber === 0 && !currentNumber) return;
   if (lastNumber && currentNumber && operator) {
     currentNumber = evalNumbers(lastNumber, currentNumber, operator).toString();
+    if (currentNumber.length > 9) {
+      currentNumber = Number(currentNumber).toExponential(2).toString();
+    }
     lastNumber = 0;
     decimal = false;
     operator = "";
